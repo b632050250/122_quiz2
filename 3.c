@@ -2,34 +2,31 @@
 #include<string.h>
 int main()
 {
-    int i,j,k,m=0,p=0,q=0,r=0;
+    int i,j,k,m=0,p,q=1;
     char a='0';
     char n[1000],b[1000],c[1000];
     scanf("%s",n);
-    for(i=n; i>a; i--)
+    k=strlen(n);
+    for(i=k-1; i>0; i--)
     {
-        m=0;
-        k=strlen(i);
-        printf("%d",k);
-        /*for(j=k-1; j>0; j--)
+        p+=n[i]*q;
+        q=q*10;
+    }
+    for(j=q; j>0; j--)
+    {
+        for(i=0; i<k; i++)
         {
-            b[m]=n[j];
-            printf("%c %c",b[m],n[j]);
+            b[k-1]=n[i];
+            k--;
+        }
+    for(i=0; i<k; i++)
+    {
+        if(b[i]==n[i])
+        {
             m++;
         }
-        for(j=0; j<k; j++)
-        {
-            if(n[j]==b[j])
-            {
-                p++;
-            }
-        }
-        if(p==k)
-        {
-            r++;
-        }
-        p=0;*/
     }
-    printf("%d",r);
+    }
+    printf("%d",m);
     return 0;
 }
